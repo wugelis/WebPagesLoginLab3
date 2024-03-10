@@ -1,0 +1,15 @@
+﻿@page
+@model WebPagesLoginLab3.Pages.ProductPageModel
+@using WebPagesLoginLab3.Models
+@{
+    ViewData["IsNumberReadOnly"] = true;
+}
+
+<div>
+    @*<partial name="_ProductPartial"
+             for="Product"
+             >*@
+
+    <partial name="_ProductPartial"
+             model='new Product { Number = 1, Name = "Test product", Description = "This is a test" }'/>
+</div>
