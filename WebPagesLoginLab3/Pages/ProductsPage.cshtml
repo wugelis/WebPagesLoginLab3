@@ -1,0 +1,32 @@
+﻿@page
+@model WebPagesLoginLab3.Pages.ProductsPageModel
+@{
+
+}
+
+<div class="form-group">
+    <table border="1">
+        <tr>
+            <td>
+                <label asp-for="Products[0].Name"></label>
+            </td>
+            <td>
+                <label asp-for="Products[0].Description"></label>
+            </td>
+        </tr>
+        @foreach (var product in this.Model.Products)
+        {
+            <tr>
+                <td>
+                    <input asp-for="@product.Description" type="text" class="form-control" />
+                </td>
+                <td>
+                    <input asp-for="@product.Name" type="text" class="form-control" />
+                </td>
+            </tr>
+        }
+    </table>
+    
+
+    
+</div>

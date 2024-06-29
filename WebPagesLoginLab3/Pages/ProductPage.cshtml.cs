@@ -13,12 +13,12 @@ namespace WebPagesLoginLab3.Pages
         public Product Product { get; set; }
         public void OnGet()
         {
-            Product = new Product
-            {
-                Number = 1,
-                Name = "測試產品",
-                Description = "這是一個測試用的產品"
-            };
+            //Product = new Product
+            //{
+            //    Number = 1,
+            //    Name = "測試產品",
+            //    Description = "這是一個測試用的產品"
+            //};
         }
     }
 }

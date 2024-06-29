@@ -17,9 +17,15 @@ namespace WebPagesLoginLab3.Pages
             _logger = logger;
         }
 
+        [TempData]
+        public string Message { get; set; }
+
+        [ViewData]
+        public string PageTitle { get; set; }
+
         public void OnGet()
         {
-
+            Message = $"這是測試 Temp 資料";
         }
     }
 }

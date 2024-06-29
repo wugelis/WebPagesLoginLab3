@@ -4,6 +4,74 @@
     ViewData["Title"] = "Home page";
 }
 
+@{ var total = 7; }
+@{ var myMessage = "Hello World"; }
+
+<!-- Inline expressions -->
+<p>The value of your account is: @total </p>
+<p>The value of myMessage is: @myMessage</p>
+
+<!-- Multi-statement block -->
+@{
+    var greeting = "Welcome to our site!";
+    var weekDay = DateTime.Now.DayOfWeek;
+    var greetingMessage = greeting + " Today is: " + weekDay;
+}
+<p>The greeting is: @string.IsNullOrEmpty(greetingMessage)</p>
+
+@{
+    <p>@greeting</p>
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p>Hello, Your name is @User.Identity.Name, And the time is @DateTime.Now</p>
+}
+else
+{
+    <p>Hello anonymous!! <em>Please Login Now!</em>, today is: <br /> </p> @DateTime.Now
+    <br />
+}
+<br />
+
+@{
+    var minTemp = 28;
+    <text>這個月是 @DateTime.Now.ToString("MMMM"), 以及今天是 <em>很棒</em> 的一天！
+    <br /><p>
+        如果溫度為適溫的 @minTemp 度時，你就可以去游泳了。
+    </p></text>
+}
+
+@{ var myFilePath = @"C:\My Documents\"; }
+<p>The path is: @myFilePath</p>
+
+@{ var myQuote = @"The person said: ""Hello, today is Monday."""; }
+<p>@myQuote</p>
+
+<div>
+    @( minTemp>30? "大於30度":"小於30度")
+</div>
+
+@{
+    var absoluteUri = string.Concat(
+            Request.Scheme,
+            "://",
+            Request.Host.ToUriComponent(),
+            Request.PathBase.ToUriComponent(),
+            Request.Path.ToUriComponent(),
+            Request.QueryString.ToUriComponent());
+
+    var monthlyTotal = 7;
+
+    <p>@greeting, friends!</p>
+
+    <p>The predicted annual total is: @( monthlyTotal * 12)</p>
+
+    <p>The URL to this page is: @absoluteUri</p>
+}
+
+<p>@Model.Message</p>
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
